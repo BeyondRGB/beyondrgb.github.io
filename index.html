@@ -5,11 +5,71 @@
     <title>Beyond RGB</title>
 </head>
 <body>
-    <h1>Beyond RGB</h1>
-    <p>Sponsors: Susan Farnand, Leah Humenuck, and Olivia Kuzio</p>
-    <p>Senior Project Coach: Paul Yacci</p>
-    <p>Team Members: John Akey, Elijah Cooper, Brendan Grau, SungMin Kim, and Keenan Miller</p>
-    <h2><a href="https://github.com/BeyondRGB/Imaging-Art-beyond-RGB/releases/tag/v1.5.0"> Release 1.5</a></h2>
-    <h2><a href="https://github.com/BeyondRGB/Imaging-Art-beyond-RGB/releases/tag/v1.0.0"> Release 1</a></h2>
+    <div class="mainLogo">
+        <img src="TextLogo.svg" alt="Beyond RGB">
+        <h1>Beyond RGB</h1>
+        <div class="buttonGroup">
+            <button type="button" class="downloadButton" onclick="window.location.href='DownloadPage.html';">Download</button>
+            <button type="button" class="userGuidesButton" onclick="window.location.href='UserGuidesPage.html';">User Guides</button>
+            <button type="button" class="aboutButton" onclick="window.location.href='AboutPage.html';">About</button>
+        </div>
+        <p>Sponsors: Susan Farnand, Leah Humenuck, and Olivia Kuzio</p>
+        <p>Senior Project Coach: Paul Yacci</p>
+        <p>Team Members: John Akey, Elijah Cooper, Brendan Grau, SungMin Kim, and Keenan Miller</p>
+        <h2><a href="https://github.com/BeyondRGB/Imaging-Art-beyond-RGB/releases/tag/v1.5.0"> Release 1.5</a></h2>
+        <h2><a href="https://github.com/BeyondRGB/Imaging-Art-beyond-RGB/releases/tag/v1.0.0"> Release 1</a></h2>
+    </div>
 </body>
 </html>
+
+<style>
+    .buttonGroup {
+
+    }
+    .aboutButton {
+        background-color: #6b74b0;
+        width: 32%;
+        font-size: 30px;
+    }
+    .aboutButton:hover {
+        background-color: #3A438DFF;
+    }
+    .userGuidesButton {
+        background-color: #45c252;
+        width: 32%;
+        font-size: 30px;
+    }
+    .userGuidesButton:hover {
+        background-color: #24bb38;
+    }
+    .downloadButton {
+        background-color: #A64C4C;
+        width: 32%;
+        font-size: 30px;
+    }
+    .downloadButton:hover {
+        background-color: #A42424FF;
+    }
+    .mainLogo {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    h1 {
+        color: red;
+        font-size: 0px;
+        visibility: hidden
+    }
+    body {
+        background-color: rgb(31 41 55);
+    }
+    p {
+        color: white;
+    }
+    a {
+        color: white;
+    }
+</style>
