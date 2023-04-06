@@ -1,70 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Beyond RGB</title>
+    <meta charset="utf-8"/>
+    <title>BeyondRGB</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
-<body>
-    <div class="mainLogo">
-        <img src="TextLogo.svg" alt="Beyond RGB">
-        <h1>Beyond RGB</h1>
-        <div class="buttonGroup">
-            <button type="button" class="downloadButton" onclick="window.location.href='DownloadPage.html';">Download</button>
-            <button type="button" class="userGuidesButton" onclick="window.location.href='UserGuidesPage.html';">User Guides</button>
-            <button type="button" class="aboutButton" onclick="window.location.href='AboutPage.html';">About</button>
-        </div>
-    </div>
-</body>
+
+<div id="header">
+    <a id="headerLink" href="index.html">BeyondRGB</a>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+    <a href="index.html"><b>about</b></a>
+    <a href="guide.html">user guide</a>
+    <a href="faq.html">faq</a>
+    <a href="screenshots.html">screenshots</a>
+    <a href="license.html">licence</a>
+    <span class="right">
+        <a href="/downloads.html">download</a>
+        <a href="https://github.com/BeyondRGB/Imaging-Art-beyond-RGB">source</a>
+    </span>
+</div>
+</div>
+<div id="content">
+<hr class="hidden"/>
+<div id="main">
+
+<p><img id="about-logo" src="logo.svg" alt="BeyondRGB" /></p>
+
+<p>BeyondRGB is a desktop spectral image processing application for Windows,
+Mac, and Linux. It allows for the spectral calibration of images without the
+large price tag that comes with similar software.</p>
+
+</div>
+
 </html>
 
-<style>
-    .buttonGroup {
-
-    }
-    .aboutButton {
-        background-color: #6b74b0;
-        width: 32%;
-        font-size: 30px;
-    }
-    .aboutButton:hover {
-        background-color: #3A438DFF;
-    }
-    .userGuidesButton {
-        background-color: #45c252;
-        width: 32%;
-        font-size: 30px;
-    }
-    .userGuidesButton:hover {
-        background-color: #24bb38;
-    }
-    .downloadButton {
-        background-color: #A64C4C;
-        width: 32%;
-        font-size: 30px;
-    }
-    .downloadButton:hover {
-        background-color: #A42424FF;
-    }
-    .mainLogo {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-    h1 {
-        color: red;
-        font-size: 0px;
-        visibility: hidden
-    }
-    body {
-        background-color: rgb(31 41 55);
-    }
-    p {
-        color: white;
-    }
-    a {
-        color: white;
-    }
-</style>
