@@ -4,6 +4,54 @@
     <meta charset="utf-8"/>
     <title>BeyondRGB</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function collapeTextBox(headerID){
+            //first close all the faq boxes
+            let questionHeaders = document.getElementsByClassName("qHeader");
+            console.log(questionHeaders)
+            for(const header of questionHeaders){
+                if(header.id!=headerID){ //except for the target header that was clicked...
+                    //hide the answers
+                    answerDiv = header.nextElementSibling;
+                    answerDiv.style.maxHeight=null; 
+                }
+            }
+           
+
+            //open/close the one that was selected
+            let targetQHeader = document.getElementById(headerID);
+            let targetADiv = targetQHeader.nextElementSibling;
+            if(targetADiv.style.maxHeight){ //if open then close
+                targetADiv.style.maxHeight = null;
+            }
+            else{
+                targetADiv.style.maxHeight = targetADiv.scrollHeight + 'px';
+            }
+        }
+    </script>
+    <style>
+        .answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            margin-bottom:40px;
+        }
+
+        .qHeader{
+            font-size: 1.0em;
+            padding: 10px 15px;
+            background-color: #a64c4c;
+
+        }
+        .qHeader:hover{
+            cursor:pointer;
+        }
+        .faqImage{
+            display: block;;
+            height:400px;
+        }
+    </style>
 </head>
 
 <div id="header">
@@ -25,10 +73,106 @@
 <div id="content">
 <hr class="hidden"/>
 <div id="main">
+<!-- a64c4c -->
+<h1>Frequently Asked Questions</h1><br />
 
-<p>Coming Soon</p>
+
+<div id="q1" class="qHeader" onclick="collapeTextBox('q1')">Is this software free or does it cost money?</div>
+<div class="answer">
+    BeyondRGB is a free and open-source software. You can install and run BeyondRGB free of charge, 
+    all that is needed is proper lighting equipment and a standard RGB camera.
+</div>
+
+
+<div id="q2" class="qHeader" onclick="collapeTextBox('q2')">Why is BeyondRGB taking so long to install? Why do I still see the installation gif?</div>
+<div class="answer">
+    BeyondRGB should not actually take too long to install onto your computer. Sometimes the installation gif will
+    remain on screen even after the installation has completed. This is a known bug. 
+    To check that BeyondRGB has finished installing TODO. Once it is finished you can right click on the icon on the taskbar
+    and manually close the window, which sould get rid of the installation gif. 
+</div>
+
+
+<div id="q3" class="qHeader" onclick="collapeTextBox('q3')">Why is my Mac saying "Unidentified developer" before installation?</div>
+<div class="answer">
+    Mac computers have a built in safety system to prevent users from installing untrusted or malicious
+    software. Applications that are "signed" are considered trustworthy by Mac, however signing
+    an application requires money. <br />
+    This goes against BeyondRGB's intent to be a free, open source software. Even though BeyondRGB is not signed, 
+    it is still safe to install. See this video to learn how to bypass the warning.
+</div>
+
+<div id="q4" class="qHeader" onclick="collapeTextBox('q4')">Reccommended specs for batch processing?</div>
+<div class="answer">
+   todo
+</div>
+
+<div id="q5" class="qHeader" onclick="collapeTextBox('q5')">Where is my color managed image?</div>
+<div class="answer">
+    Your color managed image should appear in the folder that was selected during the "Output Destination" step during Processing.
+    The color managed image will be a .TIFF file; the filename will begin with the prefix "BeyondRGB_CM_" followed by a string of numbers.
+    <img class="faqImage" src="resources/cmImageFileLocation.png"/>
+</div>
+
+<div id="q6" class="qHeader" onclick="collapeTextBox('q6')">Sometimes the image viewers say "error not found", but will then load the image fine?</div>
+<div class="answer">
+    This is a known issue, it simply has to do with the way the image is loaded. 
+    Unless a error alert popup appears, the image should load given a few seconds.
+</div>
+
+<div id="q7" class="qHeader" onclick="collapeTextBox('q7')">Why is BeyondRGB slowing down my computer?</div>
+<div class="answer">
+    This is expected. BeyondRGB uses a lot of your computers CPU because spectral processing an image is a computationally expensive process.
+    We do not recommend trying to perform other tasks on your computer while BeyondRGB is processing an image. We also suggest closing other processes
+    (search browsers, applications, etc.) while BeyondRGB is processing an image. Once the process is finished, your computer should return to its normal
+    performance.
+</div>
+
 
 </div>
 
 </html>
 
+<!-- 
+    
+FAQ:
+
+What lighting condition is used for the example images?
+
+
+
+how many images can batch processing handle?
+ reccommend a number, and how fast 
+
+    
+
+
+Reccommended specs for batch processing?
+	its preferred if the computer running b-rgb is not doing anything else
+
+What should I do if I run into an error?
+	during processing?
+	check output folder for what did not get processed
+
+	
+I moved my image(s) / file(s) into a differnet spot and now nothing will load?
+	preferred to keep all files in the original destination directory.
+	preffered to keep all files together as well.
+	Go into .btrgb file and change the filepaths to the current filepaths.
+
+    
+
+Q: can you use anytype of camera with this?
+
+Q: What lighting conditions is used for the example images?
+A: (leah will provide information)
+
+
+Q: Can you image 3d objects:
+A: no
+
+Q: My image is not calibrating correctly
+A: make sure they are lined up, not glossy, have registration targets
+
+Q: can I use my own color calibration target
+A: yes (provide details on how) -->
