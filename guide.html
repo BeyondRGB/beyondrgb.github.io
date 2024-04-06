@@ -56,6 +56,8 @@
         <li><a href="#spectralPicker">Spectral Picker</a></li>
         <li><a href="#calibrationCharts">Calibration Charts</a></li>
         <li><a href="#issues">Issues Running BeyondRGB</a></li>
+        <li><a href="#customTarget">Using your own custom Calibration Target</a></li>
+
     </ul>
 
     <hr/>
@@ -274,6 +276,61 @@
     <iframe width="800" height="600" allowfullscreen
             src="https://www.youtube.com/embed/7EEO1hbGTnc">
     </iframe>
+
+    <hr/>
+    <h3 id="customTarget">Using your own custom Calibration Target</h3>
+    <p>You do not have to use the given example calibration target images/data. This section will show you how to use your own calibration target data.
+         First you will want to follow the image processing setup as normal. When you get to the Target Patch Selection page, click on the "Reference Data" dropdown
+         and select the "Choose a custom file..." option. A popup box will appear. Here you can download the custom reference target template.
+    </p>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/customTargetData1.png"/>
+        <img class="processImage" src="resources/customTargetData2.png"/>
+    </div>
+    <p>The file template should initially look like the image below. This is a .csv file so it can be edited using Microsoft Excel, but I will be using Google Sheets for this guide.</p>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/customTargetData3.png"/>
+    </div>
+    <p> The very first column in the spreadsheet should have the wavelength values, 36 wavelength values plus the 1 header. This column, and thus the number of rows should remain unchanged.
+        Each patch on your color target will must be accounted for in this spreadsheet. I will also be using the example calibration target. 
+        Start at the top left patch of your calibration target. The header for this row should be "A:1". The column header for each color patch
+        will follow the format of "letter:number". The letter is the column the patch is in, starting at letter 'A'. The number is the row the patch is in, starting at one. 
+        Then you can put in the measured value for each corresponding wavelength below in the same column.
+    </p>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/ColorManagedTarget.png"/>
+        <img class="processImage" src="resources/customTargetData4.png"/>
+    </div>
+    <p> Once finished, the next column in the spreadsheet, A:2, will be the the color patch below A:1. 
+        Continue to add in data row-by-row for each color patch in the leftmost column, adding a new column for each patch in the RefDataTemplate.
+        This example has ten rows, so the color patch in the bottom-left corner is denoted by A:10.
+    </p>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/customTargetData5.png"/>
+    </div>
+    <p> Now that the first column is finished, repeat the process for the next column to the right. Denote the new column by the next letter.
+        So the patch directly to the right of the patch in the top-left corner is B:1. Continue to add in data row-by-row for each color patch in this column,
+        in this example it would be to B:10. Repeat this whole process for the entirety of the calibration target. The data for this example goes to N:10, since it is a 14 by 10 grid.
+    </p>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/customTargetData6.png"/>
+    </div>
+    <p> Now that the all of your calibration target data is in the spreadsheet, save it to your computer. You can name it whatever you like, but make sure that it is saved as a .csv file.
+        Back in the BeyondRGB application, click on the "Reference Data" dropdown and select the "Choose a custom file..." option. In the popup click the 
+        "Select Reference Data" button, and select the spreadsheet you just saved. Click the "Confirm" button.
+    </p>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/customTargetData7.png"/>
+        <img class="processImage" src="resources/customTargetData8.png"/>
+    </div>
+    <br/>
+    <div style="display: flex; gap: 10px">
+        <img class="processImage" src="resources/customTargetData9.png"/>
+    </div>
+    <p>Finally, make sure the grid overlay is properly aligned on the calibration target, with the proper number of rows, columns, and the coordinates of the white patch.
+            Now you can begin processing your artwork with your custom calibration target!
+    </p>
+    
 
 </div>
 </div>
