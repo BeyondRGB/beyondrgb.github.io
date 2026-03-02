@@ -13,7 +13,7 @@ body {
 
 li {
     font-size: 0.7em;
-    list-style-type: none;
+    /* list-style-type: none; */
 }
 
 pre, code {
